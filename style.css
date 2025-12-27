@@ -11,24 +11,24 @@
     margin: 0px;
     padding: 0px;
     display: grid;
-    grid-template: 1fr 4fr / 1fr 4fr;
+    grid-template: auto 4fr / 1fr 4fr;
     width: 100vw;
     height: 100vh;
     border: 1px solid black;
 }
 
-img {
+.sidebar img {
     width: 2em;
     filter: invert(1);
 }
 
 .sidebar {
     display: grid;
-    grid-template-rows: 1fr 3fr 3fr;
+    grid-template-rows: auto auto 3fr;
     grid-area: 1 / 1 / 3 / 2;
-    border: 1px solid black;
     background: royalblue;
     color: white;
+    gap: 5rem;
 }
 
 .sidebar li {
@@ -64,29 +64,97 @@ img {
 }
 
 .nav {
+    padding: 0.5rem 1rem;
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template: auto 1fr / 2fr 1fr;
     grid-area: 1 / 2 / 2 / 3;
-    border: 1px solid black;
-    gap: 15px;
+    gap: 1rem;
 }
 
-.nav-sub-menu {
-    border: 1px solid black;
+.nav-icons {
+    width: 2rem;
+}
+
+#search-bar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+input {
+    background-color: lightslategrey;
+    flex: 1;
+    border: none;
+    height: 1.5rem;
+    border-radius: 20px;
+}
+
+#user-homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.8rem;
+}
+
+#user-homepage .user-photo {
+    width: 4rem;
+    height: auto;
+    border-radius: 50px;
+}
+
+#user-greeting {
+    display: grid;
+    grid-template: 1fr 1fr / auto 1fr;
+    gap: 0.5rem 1rem;
+}
+
+#user-greeting .user-photo {
+    width: 6rem;
+    height: auto;
+    border-radius: 100px;
+    grid-row: 1 / 3;
+    align-self: center;
+}
+
+#user-greeting p {
+    align-self: flex-end;
+}
+
+#user-greeting h4 {
+    font-size: 1.5rem;
+    align-self: flex-start;
+}
+
+#user-commands {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+button {
+    background-color: royalblue;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    width: 6rem;
+    height: 2rem;
+    border-radius: 50px;
 }
 
 .main-panel {
     display: grid;
-    grid-template: 2fr 1fr / 4fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-area: 2 / 2 / 3 / 3;
-    border: 1px solid black;
-    gap: 15px;
-    padding: 40px;
+    gap: 2rem;
+    padding: 1rem;
 }
 
 .projects {
     display: grid;
-    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-area: 1 / 1 / 3 / 2;
     border: 1px solid black;
     gap: 15px;
